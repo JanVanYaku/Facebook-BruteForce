@@ -12,7 +12,7 @@ https://youtu.be/qIfGxDmRQIU
 
 ## Run commands one by one
 ```
->> git clone https://github.com/IAmBlackHacker/Facebook-BruteForce
+>> git clone https://github.com/JanVanYaku/Facebook-BruteForce
 >> cd Facebook-BruteForce
 >> python3 -m pip install requests bs4
 >> python3 -m pip install mechanize
@@ -20,9 +20,9 @@ https://youtu.be/qIfGxDmRQIU
 ```
 
 ## Screenshots
-![CAPTURE 1](https://github.com/IAmBlackHacker/Facebook-BruteForce/blob/master/Screenshots/Capture1.JPG)
-![CAPTURE 1](https://github.com/IAmBlackHacker/Facebook-BruteForce/blob/master/Screenshots/Capture2.JPG)
-![CAPTURE 1](https://github.com/IAmBlackHacker/Facebook-BruteForce/blob/master/Screenshots/Capture3.JPG)
+![CAPTURE 1](https://github.com/JanVanYaku/Facebook-BruteForce/blob/master/Screenshots/Capture1.JPG)
+![CAPTURE 1](https://github.com/JanVanYaku/Facebook-BruteForce/blob/master/Screenshots/Capture2.JPG)
+![CAPTURE 1](https://github.com/JanVanYaku/Facebook-BruteForce/blob/master/Screenshots/Capture3.JPG)
 
 ## Protection Against Attacker
 * Use Strong Password(which contains standard password chars + longest as possible)
@@ -30,7 +30,7 @@ https://youtu.be/qIfGxDmRQIU
 * Make location based login(+browser based).
 
 ## Explore More in Hacking ...
-https://www.facebook.com/B14CKH4K3R/
+
 
 ~~~
 Happy Hacking Day !
